@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy MNP</title>
+
+    <link rel="shortcut icon" type="image/png" href="src\image\MNP_Fav.png"/>
+    <link rel="stylesheet" href="buymnp.css">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>      
+    <script src="buymnp.js"></script>   
+
+    <meta name="viewport" content="width = device-width">
+
+</head>
+<body class="buy_main">
+    <div class="wrapper"> 
+        <header class="header">
+            <div class="header_logo_container">
+                <a class="header_logo_link" href="index.html">
+                    <img class="header_logo" src="src\image\MNP.svg" alt="MONOPOLYON">
+                </a>
+    
+            </div>
+            <div class="transition"></div>
+            <div class="header_container">
+                <div class="header_body">
+                    <div class="header_burger">
+                        <span class="span_burger"></span>
+                    </div>
+                    <div class="menu_container">                    
+                        <nav class="header_menu">
+                            <ul class="header_list">
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="index.html" class="headerlink">Home</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="Paper-EN.html" class="headerlink">Paper</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="FAQ.html" class="headerlink">FAQ</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="buymnp.html" class="headerlink" id="buy_mnp_link">Buy MNP</a>
+                                </li>
+                                <li class="li_sotial_conteiner">
+                                    <div class="nav_sotial">
+                                        
+                                        <img class="sotial_image" src="src\image\Icons\Sotial network.png" alt="">
+                                        
+                                        
+                                    </div>
+                                    <div class="sotial_container">
+                                        <div class = "head_sotial">                                                                
+                                            <a class="footer_link" href="https://t.me/Monopolyon_mnp" target="_blank" title="https://t.me/+jG_TIG3nYrw0NWVi">
+                                                <img class="footer_icon" style="height: 32px;" src="src/image/Icons/Telegram.png" alt="Telegram" >
+                                                <div class="sotial_name center_center">
+                                                    Telegram group
+                                                </div>
+                                            </a>
+                                            <a class="footer_link" href="https://t.me/Monopolyon_mnp" target="_blank" title="t.me/Monopolyon">
+                                                <img class="footer_icon" style="height: 32px;" src="src/image/Icons/Telegram.png" alt="Telegram" >
+                                                <div class="sotial_name center_center">
+                                                    Telegram channel
+                                                </div>
+                                            </a>
+                                            <a class="footer_link" href="https://twitter.com/monopolyon_mnp"  target="_blank" title="https://twitter.com/monopolyon_mnp">
+                                                <img class="footer_icon" style="height: 28px;" src="src/image/Icons/Twitter.png" alt="Twitter" >
+                                                <div class="sotial_name center_center">
+                                                    Twitter
+                                                </div>
+                                            </a>                                                                                                                                                                                                                                                                     
+                                        </div>
+                                    </div>
+                                </li>                                
+                            </ul>                            
+                        </nav> 
+                             
+                        <div class="div-inli-right">
+                            <div class="settings" >
+                                <a href="settings.html">
+
+                                    <img class="img_set" src="src\image\gear.svg" alt="settings" title="Settings">
+                                </a>
+                            </div>
+                            <button class="connect-btn" id="connect_button">
+                                <div class="connect_btn_text" id="conn_text">Connect MetaMask</div>
+                                <div class="connect_btn_tool">
+                                    <span class="tooltip_login_btn">Tooltip text</span>
+                                </div>
+            
+                            </button>                              
+                        </div>
+                    </div>
+                </div>                                
+            </div> 
+                      
+        </header>
+        
+        <div class="content_conteiner">
+            <div class="content">
+                <div class="main_information_conteiner">                    
+                    <div class="main_buy_information">
+                        <div class="buy_information" id="token_sold_information">
+                            <div class="information_cell center_center" >
+                                <div class="cell_information_text">
+                                    Token Sold:
+                                    
+                                </div>
+                                <div>
+                                    <div class="cell_information_value" id="token_sold_value">
+                                    
+                                    </div> 
+                                    <div class="cell_information_text" id="MNP_lable">
+                                        &nbspMNP
+                                        
+                                    </div>
+                                </div>
+                                               
+                            </div>            
+                        </div>        
+                    </div>
+
+                </div>
+                <div class="tab_navigation center_center">
+                    <div class="tab_container center_center">
+                        <div class="buy_tab center_center selected">
+                            Metamask Buy
+                        </div>
+                        <div class="description_tab center_center">
+                            Token Information
+                        </div>                        
+                    </div>
+                </div>
+                <div class="buy_body">
+                    <div class="buy_table ">
+                        
+                        <div class="buy_conteiner center_center" id="token_info">
+                            
+
+                            <div class="buy_table_header">
+                                Token Information
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Blockchain">
+                                        Blockchain:
+                                    </div>
+                                    <div class="token_information_row_value" >
+                                        Binance Smart Chain (BEP-20)
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br> 
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Sale Address">
+                                        Sale Address:
+                                    </div>
+                                    <div class="token_information_row_value" id="sale_addres" title='Click To Copy Sale Address:&#013Token Address'> 
+                                        <img class="copy_icon" src="src\image\Icons\Copy_Icon.png" alt=""> 0xC9155Ec730dD403349D568E16dD7282591e5CD0F
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br> 
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Token Name">
+                                        Token Name:
+                                    </div>
+                                    <div class="token_information_row_value" >
+                                        MONOPOLYON
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Token Address">
+                                        Token Address:
+                                    </div>
+                                    <div class="token_information_row_value" id="token_address_value" title="Click To Copy Token Address:&#013Token Address">
+                                        <img class="copy_icon" src="src\image\Icons\Copy_Icon.png" alt="">
+                                         0xd830eee9d9f2402d0621382047c6c7aa13dd726f
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Symbol">
+                                        Symbol:
+                                    </div>
+                                    <div class="token_information_row_value" >
+                                        MNP
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Token Decimals">
+                                        Token Decimals:
+                                    </div>
+                                    <div class="token_information_row_value">
+                                        9 (nine decimal places)
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Token Supply">
+                                        Token Supply:
+                                    </div>
+                                    <div class="token_information_row_value" id="sale_address_value">
+                                        210 000 000 MNP
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Sale Supply">
+                                        Total Sale Supply:
+                                    </div>
+                                    <div class="token_information_row_value">
+                                        123 900 000 MNP
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br> 
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Sale Rate">
+                                        Sale Rate:
+                                    </div>
+                                    <div class="token_information_row_value" id="sale_step_supply">
+                                        1BNB = 1 155 000 MNP
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>
+                            <div class="token_information_row">
+                                <div class="token_information_container ">
+                                    <div class="token_information_row_name" title="Listing Rate">
+                                        Listing Rate:
+                                    </div>
+                                    <div class="token_information_row_value" id="sale_step_supply">
+                                        1BNB = 1 050 000 MNP
+                                    </div>
+            
+                                </div>                   
+                            </div>
+                            <br>                                                           
+                        </div>
+                        <div class="right_form show">
+                            <div class="buy_token_form_container">
+
+                                <div class="buy_token_form_top" id="right_buy_form_top">
+                                    <div class="buy_table_header">
+                                        MetaMask Buy
+                                    </div>
+                                    
+                                    <div class="rate_price mr_top">
+                                        <b>Rate:</b>
+                                        1 BNB = 1 155 000
+                                        <b><div id="rate_price_value">
+
+                                        </div>&nbspMNP</b>
+                                    </div>   
+                                    <br>
+                                    <br>                                                                     
+                
+                                    <div class="input_bnb_conteiner center_center">
+                                        <input class="input_bnb" type="number" id="amonut_bnb" step="0.01" min="0" 
+                                        placeholder="Amount in BNB">
+                                        <div class="bnb_sl">
+                                            <div class="bnb_symbol">BNB</div>
+                                            <img src="src\image\BNB_Logo.png" alt="BNB Logo" class="logo_bnb">
+                
+                                        </div>
+                                    </div>
+                                    <div class="buy_desc_cont">
+                                        <div class="buy_desc">
+                                            
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="get_mnp_conteiner ">
+                                        <div class="get_centre">
+                                            <b>Get: &nbsp</b>
+                                            <div class="get_mnp" id="mnp_value">
+                                                0
+                                            </div>
+                                            <b>&nbsp MNP</b>
+                
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="buy_form_button_groop">
+                                        <button class="connect-btn" id="buy_form_connect_btn">
+                                            <div class="connect_btn_text" id="conn_text">Connect MetaMask</div>
+                                            <div class="connect_btn_tool" >
+                                                <span class="tooltip_login_btn"></span>
+                                            </div>
+                                        </button>
+                                        <button class="connect-btn" id="buy_mnp">
+                                            <div class="connect_btn_text" id="conn_text">Buy MNP</div>
+                                            <div class="connect_btn_tool" >
+                                                <span class="tooltip_login_btn"></span>
+                                            </div>
+                                        </button>
+                
+                                    </div>
+                                    
+                                </div>
+                                <div class="buy_inform_container center_center">
+                                    <b class="sale_step"></b>
+                                    <br>
+                                    Про начало следующего шага продаж, можно узнать из наших социальных сетей
+
+                                </div>
+                                <div class="load_img_container center_center">
+                                    <img class="loading_img" src="src/image/Loading.gif" alt="Loading">
+                                    Loading
+                                </div>
+                            </div>
+            
+                            <div class="buy_token_form" id="right_buy_form_bottom">
+                                <div id="direct_container">
+                                    <div class="buy_table_header">
+                                        Direct Buy
+                                    </div>
+                                    
+                                    <div class="direct_description">
+                                        Send BNB direct direct to sale address and you will receive MNP tokens immediately
+                                    </div>
+                                    <div class="QR_conteiner">
+                                        <img class="direct_QR" src="src\image\MNP Contract QR.png" alt="">
+                
+                                    </div>
+                                    <div class="direct_address" title='0xC9155Ec730dD403349D568E16dD7282591e5CD0F'>
+                                        <img class="copy_icon" src="src\image\Icons\Copy_Icon.png" alt=""> 0xC9155....e5CD0F
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

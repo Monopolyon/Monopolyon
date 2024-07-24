@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopolyon</title>
+
+    <link rel="shortcut icon" type="image/png" href="src\image\MNP_Fav.png"/>
+    <link rel="stylesheet" href="index.css">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+    
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>     
+                
+    <script src="index.js"></script>
+    
+</head>
+<body>
+    <div class="wrapper">
+
+    
+        <header class="header">
+            <div class="header_logo_container">                
+                <a class="header_logo_link" href="index.html"><img class="header_logo" src="src\image\MNP.svg" alt="MONOPOLYON"></a>                                
+            </div>
+            <div class="transition"></div>
+            <div class="header_container">
+                <div class="header_body">
+                    <div class="header_burger">
+                        <span class="span_burger"></span>
+                    </div>
+                    <div class="menu_container">                    
+                        <nav class="header_menu">
+                            <ul class="header_list">
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="index.html" class="headerlink">Home</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="Paper-EN.html" class="headerlink">Paper</a>
+                                </li>                                
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="FAQ.html" class="headerlink">FAQ</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="buymnp.html" class="headerlink" id="buy_mnp_link">Buy MNP</a>
+                                </li>
+                                <li class="li_sotial_conteiner">
+                                    <div class="nav_sotial">
+                                        
+                                        <img class="sotial_image" src="src\image\Icons\Sotial network.png" alt="Sotial Networks">
+                                        
+                                        
+                                    </div>
+                                    <div class="sotial_container">
+                                        <div class = "head_sotial">                                                                
+                                            <a class="footer_link" href="https://t.me/Monopolyon_mnp" target="_blank" title="https://t.me/+jG_TIG3nYrw0NWVi">
+                                                <img class="footer_icon" style="height: 32px;" src="src/image/Icons/Telegram.png" alt="Telegram" >
+                                                <div class="sotial_name center_center">
+                                                    Telegram group
+                                                </div>
+                                            </a>
+                                            <a class="footer_link" href="https://t.me/Monopolyon_mnp" target="_blank" title="t.me/Monopolyon">
+                                                <img class="footer_icon" style="height: 32px;" src="src/image/Icons/Telegram.png" alt="Telegram" >
+                                                <div class="sotial_name center_center">
+                                                    Telegram channel
+                                                </div>
+                                            </a>
+                                            <a class="footer_link" href="https://twitter.com/monopolyon_mnp"  target="_blank" title="https://twitter.com/monopolyon_mnp">
+                                                <img class="footer_icon" style="height: 28px;" src="src/image/Icons/Twitter.png" alt="Twitter" >
+                                                <div class="sotial_name center_center">
+                                                    Twitter
+                                                </div>
+                                            </a>                                                                                                                                                                                                                                                                     
+                                        </div>
+                                    </div>
+                                </li>                                
+                            </ul>                            
+                        </nav> 
+                            
+                        <div class="div-inli-right">
+                            <div class="settings" >
+                                <a href="settings.html">
+                                    <img class="img_set" src="src\image\gear.svg" alt="settings" title="Settings">
+                                </a>
+                            </div>
+                            <button class="connect-btn" id="connect_button">
+                                <div class="connect_btn_text" id="conn_text">Connect MetaMask</div>
+                                <div class="connect_btn_tool">
+                                    <span class="tooltip_login_btn">Tooltip text</span>
+                                </div>
+                                
+                            </button>                              
+                        </div>
+                    </div>
+                </div>                                
+            </div> 
+            <div class="bottom_button">                
+                <div class="search_div">
+                    <div class="open_search">&#128269</div> 
+                    <div class="search">&#128269</div>               
+                    <input class="input_search" type="text"></input>
+                <div class="close_search">&#10006</div>
+                </div>
+            </div>
+                    
+        </header>
+    </div>
+    <div class="load_container">
+        <div class="load">
+            <img class="img_load" src="src\image\Loading.gif" alt="Loading">
+            <br>
+            Loading....
+        </div>
+        
+    </div>
+    <div class="content_container"></div>
+</body>
+</html>
+

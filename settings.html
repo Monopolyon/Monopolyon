@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    
+    <link rel="shortcut icon" type="image/png" href="src\image\MNP_Fav.png"/>
+    <link rel="stylesheet" href="settings.css">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+    
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>                  
+    <script src="settings.js"></script>
+
+
+</head>
+<body class="settings_main">
+    <div class="wrapper"> 
+        <header class="header">
+            <div class="header_logo_container">
+                <a class="header_logo_link" href="index.html">
+                    <img class="header_logo" src="src\image\MNP.svg" alt="MONOPOLYON">
+                </a>
+    
+            </div>
+            <div class="transition"></div>
+            <div class="header_container">
+                <div class="header_body">
+                    <div class="header_burger">
+                        <span class="span_burger"></span>
+                    </div>
+                    <div class="menu_container">                    
+                        <nav class="header_menu">
+                            <ul class="header_list">
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="index.html" class="headerlink">Home</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="Paper-EN.html" class="headerlink">Paper</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="FAQ.html" class="headerlink">FAQ</a>
+                                </li>
+                                <li class="li_conteiner">
+                                    <a class="top_link" href="buymnp.html" class="headerlink" id="buy_mnp_link">Buy MNP</a>
+                                </li>
+                                <li class="li_sotial_conteiner">
+                                    <div class="nav_sotial">
+                                        
+                                        <img class="sotial_image" src="src\image\Icons\Sotial network.png" alt="Sotial Networks">
+                                        
+                                        
+                                    </div>
+                                    <div class="sotial_container">
+                                        <div class = "head_sotial">                                                                
+                                            <a class="footer_link" href="https://t.me/Monopolyon_mnp" target="_blank" title="https://t.me/+jG_TIG3nYrw0NWVi">
+                                                <img class="footer_icon" style="height: 32px;" src="src/image/Icons/Telegram.png" alt="Telegram" >
+                                                <div class="sotial_name center_center">
+                                                    Telegram group
+                                                </div>
+                                            </a>
+                                            <a class="footer_link" href="https://t.me/Monopolyon_mnp" target="_blank" title="t.me/Monopolyon">
+                                                <img class="footer_icon" style="height: 32px;" src="src/image/Icons/Telegram.png" alt="Telegram" >
+                                                <div class="sotial_name center_center">
+                                                    Telegram channel
+                                                </div>
+                                            </a>
+                                            <a class="footer_link" href="https://twitter.com/monopolyon_mnp"  target="_blank" title="https://twitter.com/monopolyon_mnp">
+                                                <img class="footer_icon" style="height: 28px;" src="src/image/Icons/Twitter.png" alt="Twitter" >
+                                                <div class="sotial_name center_center">
+                                                    Twitter
+                                                </div>
+                                            </a>                                                                                                                                                                                                                                                                     
+                                        </div>
+                                    </div>
+                                </li>                                
+                            </ul>                            
+                        </nav> 
+                             
+                        <div class="div-inli-right">
+                            <div class="settings" >
+                                <a href="settings.html">
+                                    <img class="img_set" src="src\image\gear.svg" alt="settings" title="Settings">
+                                </a>
+                            </div>
+                            <button class="connect-btn" id="connect_button">
+                                <div class="connect_btn_text" id="conn_text">Connect MetaMask</div>
+                                <div class="connect_btn_tool">
+                                    <span class="tooltip_login_btn">Tooltip text</span>
+                                </div>
+            
+                            </button>                              
+                        </div>
+                    </div>
+                </div>                                
+            </div> 
+                      
+        </header>
+        <div class="content_conteiner">
+            <div class="content">
+
+                <div class="left_side">
+                    <div class="wallet_information">
+                        <div class="wallet_conteiner">
+                            Wallet:&nbsp
+                            <div class="connect_status">
+
+                            </div>
+                            <div class="copy_icon_container">
+                                <img class="copy_icon" src="src\image\Icons\Copy_Icon.png" alt="Copy Address" title="Copy Address">
+                            </div>
+                            <div class="wallet_address">
+                                Wallet disconected
+                            </div>
+                        </div>
+                        <div class="balance_conteiner">
+                            Balance:&nbsp
+                            <div class="balance_value">
+                                0
+                            </div>
+                            &nbsp <b>MNP</b>
+                        </div>
+                        <div class="smart_contract_conteiner">
+                           
+                            Settings Smart Contract:&nbsp
+
+                            
+                            <div class="sc_line">
+                                <div class="copy_icon_container_save">
+                                    <img class="copy_icon" id="sc_copy" src="src\image\Icons\Copy_Icon.png" alt="Copy Address" title="Copy Address">
+                                </div>
+                                <div class="SC_value" title="0x7b36DF8EE6d8b721f7d2692B4B912f73913E0030">
+                                    0x7b36D....3E0030
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left_conteiner">
+                        <div class="left_nav">
+                            <div class="selector enable" id="dt_nav">
+                                <b>Data Settings</b>
+                            </div>
+                            <div class="selector disable" id="disp_nav">
+                                <b>Display Settings</b>
+                            </div>
+                            <div class="selector disable" id="hist_nav">
+                                <b>History</b>
+                            </div>
+
+                        </div>
+                        
+                    
+                        <div class="inp_conteiner">
+                            <div class="inp_line">
+                                <div class="inp_name">
+                                    Email:               
+                                                                                
+                                </div>
+                                
+                                <div class="inp_val_conteiner">
+
+                                    <input class="inp_value disable" placeholder="Enter Email" id="email_value"  type="text" >
+                                    <div class="inp_tool">
+                                        <span class="tooltip_inp"></span>
+                                    </div>
+                                </div>
+                                    
+                                <div class="int_description" >
+                                    Max length:&nbsp 100 characters &nbsp &nbsp &nbsp
+                                </div>
+                                <div class="int_notification" id="email_notification">
+                                    
+                                </div>
+                            </div>
+                            <div class="inp_line">
+                                <div class="inp_name">
+                                    Name:                                                                
+                                </div>
+                                <div class="inp_val_conteiner">
+
+                                    <input class="inp_value disable" placeholder="Enter Name" id="name_value"  type="text" >
+                                    <div class="inp_tool">
+                                        <span class="tooltip_inp"></span>
+                                    </div>
+                                </div>
+
+                                <div class="int_description">
+                                    Max length:&nbsp 30 characters &nbsp &nbsp &nbsp
+                                </div>
+                                <div class="int_notification" id="name_notification">
+                                    
+                                </div>
+                            </div>
+                            <div class="inp_line">
+                                <div class="inp_name">
+                                    Motto:
+                                    
+                                    
+                                </div>
+                                <div class="inp_val_conteiner">
+
+                                    <input class="inp_value disable" placeholder="Enter Motto" id="motto_value"  type="text" >
+                                    <div class="inp_tool">
+                                        <span class="tooltip_inp"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="int_description">
+                                    Max length:&nbsp 80 characters &nbsp &nbsp &nbsp
+                                </div>
+                                <div class="int_notification" id="motto_notification">
+                                    
+                                </div>
+                            </div>
+                            <div class="inp_line">
+                                <div class="inp_name">
+                                    Link:&nbsp
+
+                                </div>
+                                <div class="inp_val_conteiner">
+
+                                    <input class="inp_value disable" placeholder="Enter Link" id="link_value"  type="text" >
+                                    <div class="inp_tool">
+                                        <span class="tooltip_inp"></span>
+                                    </div>
+                                </div>
+
+                                <div class="int_description">
+                                    Max length:&nbsp 512 characters &nbsp &nbsp &nbsp
+                                </div>
+                                <div class="int_notification" id="link_notification">
+                                    
+                                </div>
+                            </div>
+                                                    
+                        </div>
+
+                        <div class="display_conteiner">
+                            <div class="display_text">
+                                Considering that the areas dynamically adapt to the display sizes, they can take different forms (square, horizontal or vertical rectangle). Below you can see what your area will look like depending on its shape
+                            </div>
+                            <div class="display_settings">
+                                
+                                <div class="disp_set_cont">
+                                    <div class="inp_disp">
+                                        Background Color: &nbsp
+                                        <input  type="color" id="back_color">
+                                    </div>
+                                    <div class="inp_disp">
+                                        <input  type="checkbox" id="flex_picture">                      &nbsp Flex Logo &nbsp
+                                        <div class="flex_logo_on_off">
+                                            OFF
+                                        </div>
+                                    </div>
+                                       
+                                </div>
+                                <div class="inp_line">
+                                    <div class="inp_name">
+                                        Logo URL:&nbsp
+                                        
+    
+                                    </div>
+                                    <div class="inp_val_conteiner">
+
+                                        <input class="inp_value disable" placeholder="Enter Logo URL" id="logo_value"  type="text">
+                                        <div class="inp_tool">
+                                            <span class="tooltip_inp"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="int_description">
+                                        Max length:&nbsp 512 characters. Supported formats: SVG, PNG, JPG, WEBP, JPEG, GIF &nbsp &nbsp &nbsp
+                                    </div>
+                                    <div class="int_notification" id="url_notification">
+                                        
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="disp_visualization">
+                                <div class="vis_cont">
+                                    <div class="square_cont link_cont">
+                                        <a class="img_ln" href=""></a>
+                                        <img class="cont_img" src="src\image\NO_IMG.png" alt="">
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="vis_cont" >
+                                    <div class="rect_vert_cont link_cont">
+                                        <a class="img_ln" href=""></a>
+                                        <img class="cont_img" src="src\image\NO_IMG.png" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="vis_cont" >
+                                    <div class="rect_hor_cont link_cont">
+                                        <a class="img_ln" href=""></a>
+                                        <img class="cont_img" src="src\image\NO_IMG.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="history_conteiner">
+                            <div class="histori_description">
+                                On this tab, you can familiarize yourself with the settings that were previously made
+ 
+                            </div>
+                            <div class="teble_conteiner">
+                                <table class="hist_table">
+                                    <tr class="header_table">
+                                        <th>Date</th>
+                                        <th>Email</th>
+                                        <th>Name</th>
+                                        <th>Motto</th>
+                                        <th>Link</th>
+                                        <th>Logo</th>
+                                        
+                                        <th>Flex</th>
+                                        <th>Color</th>
+                                    </tr>
+                                </table>                                
+                            </div>
+                            <div class="temp">
+                                In development
+                            </div>
+                        </div>
+                        <div class="btns_conteiner">                            
+                            <button class="connect-btn mr_top" id="save_data_connect_btn">
+                                <div class="connect_btn_text" id="conn_text">Connect MetaMask</div>
+                                <div class="connect_btn_tool" >
+                                    <span class="tooltip_login_btn"></span>
+                                </div>
+                            </button>
+                            <button class="connect-btn mr_top" id="save_data">
+                                <div class="connect_btn_text" id="conn_text">Save Settings</div>
+                                <div class="connect_btn_tool" >
+                                    <span class="tooltip_login_btn"></span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right_side">
+                    
+                    <div class="set_desc_container">
+                        <div class="important">
+                            <div class="important_header">
+                                <b>Important</b>
+                            </div>
+                            <div class="important_text">
+                                <ul>
+                                    <li class="imp_row">
+                                        On the Display Settings tab, you can add a Logo URL and make its display settings including background color and flex logo.
+                                    </li>  
+                                    <li class="imp_row">
+                                        If you want to update your data, you need to fill in all the fields again as the data is not partially updated but is completely overwritten, including in the Display Settings tab.
+                                    </li>                                    
+                                </ul>                                
+                            </div>
+                        </div>
+                        <div class="dt_des_conteiner">                        
+                            <div class="desc_header">
+                                <b>Data Settings Desctiption</b>
+                                
+                            </div>
+                            <div class="dt_desc_body">
+                                <div class="dt_desc_text">
+                                    <ul>
+                                        <li class="desc_row">
+                                            You can register a wallet by leaving all fields empty. Then when you hover over your area, only the address and balance of the wallet will be displayed. When you click on it, there will be no transition, and instead of the logo, a standard picture will be displayed.
+                                        </li>
+                                        <li class="desc_row">
+                                            <b>Email:&nbsp</b>
+                                            Here you can specify your email that all users will see 
+                                        </li>
+                                        <li class="desc_row">
+                                            <b>Name:&nbsp</b>
+                                            Here you can specify the name of your company or any other information
+                                        </li>
+                                        <li class="desc_row">
+                                            <b>Motto:&nbsp</b>
+                                            Here you can specify the slogan or motto of your company or any other information
+                                        </li>
+                                        <li class="desc_row">
+                                            <b>Link:&nbsp</b>
+                                            Here you can specify a link that will be followed when you click on your area
+                                        </li>
+                                        <li class="desc_row">
+                                            <b>*:&nbsp</b>
+                                            Fill in the fields according to the specified number of characters. Otherwise, the specified information  <b>will not be displayed</b>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="disp_des_container">
+                            <div class="desc_header">
+                                <b>Display Settings Description</b>
+                            </div>
+                            <div class="disp_desc_body">
+                                <ul>
+                                    <li class="desc_row">
+                                        <b>Background Color:&nbsp</b>
+                                        Fills your area with the selected color if the logo does not cover the entire width or height of the area. It makes sense to apply only if Flex Logo OFF
+                                    </li>
+                                    <li class="desc_row">
+                                        <b>Flex Logo:&nbsp</b>
+                                        Stretches the Logo to the full height and width of your area (<b>Logo proportions are not maintained</b>)
+                                    </li>
+                                    <li class="desc_row">
+                                        <b>Logo URL:&nbsp</b>
+                                        Link to the logo. Please note that only certain logo formats are supported, namely <b>SVG, PNG, JPG, WEBP, JPEG, GIF</b>.
+                                        The total length of the link should not exceed 512 characters. If the logo format does not meet the requirement, <b>the logo will not be displayed</b>.
+                                        Instead, the standard No IMG picture will be displayed. If the logo by Url becomes unavailable, <b>the standard No IMG picture will be displayed</b>.
+                                    </li>                                    
+                                    <li class="desc_row">
+                                        <b>*:&nbsp</b>
+                                        By hovering over the areas at the bottom, you can see a pop-up window with your data
+                                    </li>
+                                    <li class="desc_row">
+                                        <b>**:&nbsp</b>
+                                        If a Link value is set, when you click on the area, you will be redirected to the specified link
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hist_desc_container">
+                            <div class="desc_header">
+                                <b>History Description</b>
+                            </div>
+                            <div class="hist_desc_body">
+                                <ul>
+                                    <li class="desc_row">
+                                        <b>*:&nbsp</b>
+                                        On this page, all the settings that this wallet has made are displayed
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile_notification_conteiner">
+                <div class="mobile_notification">
+                    At the moment, the settings page is only available in desktop browsers. We apologize for any inconvenience caused.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="overflow_conteiner">
+        <div class="comporision_table_conteiner">
+            <div class="comparision_table_header">
+                Comparison Table
+                <div class="cloce_comparition_table">
+                    X
+                </div>
+            </div>
+            <div class="">
+                <div class="wallet_conteiner">
+                    Wallet:&nbsp                    
+                    <div class="copy_icon_container">
+                        <img class="copy_icon" src="src\image\Icons\Copy_Icon.png" alt="Copy Address" title="Copy Address">
+                    </div>
+                    <div class="wallet_address">
+                        Wallet disconected
+                    </div>
+                </div>
+            </div>
+            <table class="comparision_table">
+                <thead>
+                    <tr class="comparision_tr">
+                        <th class="comparision_th_left">Old Settings</th>
+                        <th class="comparision_th_centre">Title</th>
+                        <th class="comparision_th_right">New Settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td_left"><span class="old_email"></span></td>
+                        <td class="setting_name">Email</td>
+                        <td class="td_right"><span class="new_email"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><span class="old_name"></span></td>
+                        <td class="setting_name">Name</td>
+                        <td class="td_right"><span class="new_name"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><span class="old_motto"></span></td>
+                        <td class="setting_name">Motto</td>
+                        <td class="td_right"><span class="new_motto"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><span class="old_link"></span></td>
+                        <td class="setting_name">Link</td>
+                        <td class="td_right"><span class="new_link"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><span class="old_logo_url"></span></td>
+                        <td class="setting_name">Logo URL</td>
+                        <td class="td_right"><span class="new_logo_url"></span></td>
+                    </tr>                    
+                    <tr>
+                        <td class="td_left"><span class="old_color"></span></td>
+                        <td class="setting_name">Color</td>
+                        <td class="td_right"><span class="new_color"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left comparision_td_left"><span class="old_flex"></span></td>
+                        <td class="setting_name">Flex</td>
+                        <td class="td_right comparision_td_right"><span class="new_flex"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="public_notification">
+                By saving the data, you agree that it will be stored in the blockchain and will be publicly available. You can leave any field empty. If you leave all fields empty, only the public wallet address and balance will be displayed.
+            </div>
+            <div class="terms">
+                By saving data, you agree to the                
+                <a class="terms_link" href="terms_of_service.html">terms of service.</a>
+            </div>
+            <div class="save_btn_conteiner">
+                <button class="connect-btn mr_top" id="cancel_data_to_blockchain">
+                    <div class="connect_btn_text" id="conn_text">Cancel</div>
+                    <div class="connect_btn_tool" >
+                        <span class="tooltip_login_btn"></span>
+                    </div>
+                </button>
+                <button class="connect-btn mr_top" id="save_data_to_blockchain">
+                    <div class="connect_btn_text" id="conn_text">Save Settings</div>
+                    <div class="connect_btn_tool" >
+                        <span class="tooltip_login_btn"></span>
+                    </div>
+                </button>
+                
+            </div>
+        </div>
+        <div class="message_container">
+            <div class="comparision_table_header">
+                Notification
+                <div class="cloce_comparition_table">
+                    X
+                </div>
+            </div>
+            <div class="message">
+                Confirm The Transaction In MetaMask
+            </div>
+        </div>
+        <div class="data_change_overflow">
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+
+    
+    
+    
+</body>
+</html>
